@@ -10,7 +10,7 @@
             <th>ID</th>
             <th>Modèle</th>
             <th>Année</th>
-        <th></th>
+            <th>Marque</th>
         </tr>
     </thead>
     <tbody>
@@ -21,7 +21,7 @@
             <td>{{ car.id }}</td>
             <td>{{ car.model }}</td>
             <td>{{ car.year }}</td>
-            <td></td>
+            <td>{{ car.brand.name|default('Pas de marque pour cette voiture') }}</td>
         </tr>
 
         {% endfor %}

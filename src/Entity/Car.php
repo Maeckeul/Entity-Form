@@ -27,6 +27,11 @@ class Car
      */
     private $year;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Brand::class, inversedBy="cars")
+     */
+    private $brand;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -52,6 +57,18 @@ class Car
     public function setYear(int $year): self
     {
         $this->year = $year;
+
+        return $this;
+    }
+
+    public function getBrand(): ?Brand
+    {
+        return $this->brand;
+    }
+
+    public function setBrand(?Brand $brand): self
+    {
+        $this->brand = $brand;
 
         return $this;
     }

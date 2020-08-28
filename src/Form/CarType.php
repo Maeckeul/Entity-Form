@@ -31,6 +31,12 @@ class CarType extends AbstractType
                     ]),
                 ]
             ])
+            ->add('brand', null, [
+                'choice_label' => 'name',
+                'constraints' => [
+                    new Constraints\NotBlank()
+                ],
+            ])
         ;
     }
 
